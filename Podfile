@@ -3,11 +3,10 @@ target 'KataLogInLogOutSwift' do
 
   pod 'BrightFutures'
   pod 'Bow'
-  pod 'Nimble'
 
   target 'KataLogInLogOutSwiftTests' do
     inherit! :search_paths
-
+    pod 'Nimble'
   end
 
 end
