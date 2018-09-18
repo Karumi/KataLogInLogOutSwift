@@ -1,3 +1,28 @@
-PODFILE CHECKSUM: 5ea48ca8f9a6988207f394156fe888e13c7c5381
+PODS:
+  - Bow (0.1.0)
+  - BrightFutures (6.0.1):
+    - Result (~> 3.2.4)
+  - Nimble (7.3.0)
+  - Result (3.2.4)
+
+DEPENDENCIES:
+  - Bow
+  - BrightFutures
+  - Nimble
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - Bow
+    - BrightFutures
+    - Nimble
+    - Result
+
+SPEC CHECKSUMS:
+  Bow: 15e07c72ffd3c795ef7d9de684d9c71e9752d254
+  BrightFutures: 9c03dab79e73ffe504b7bafc15c5bfdaeee54890
+  Nimble: c8d6a1f463701921c46de965c673e13cafa09196
+  Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
+
+PODFILE CHECKSUM: d4f03ba985251ac4d724341bb43167a28628b3ad
 
 COCOAPODS: 1.5.0
