@@ -30,6 +30,9 @@
                                 <rect key="frame" x="162" y="318" width="55" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Log Out"/>
+                                <connections>
+                                    <action selector="onLogOutButtonTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ri8-HU-csa"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="702-Fd-2er">
                                 <rect key="frame" x="10" y="40" width="355" height="30"/>
@@ -64,7 +67,6 @@
                     <connections>
                         <outlet property="logInButton" destination="Sxr-hI-7zC" id="iGx-h1-Ho1"/>
                         <outlet property="logOutButton" destination="uQY-eI-xWZ" id="rsA-CY-0Kf"/>
-                        <outlet property="onLogOutButtonTap" destination="uQY-eI-xWZ" id="izL-N5-1aa"/>
                         <outlet property="password" destination="hm6-Nr-wuj" id="FzX-r8-q33"/>
                         <outlet property="username" destination="702-Fd-2er" id="Nq1-Kq-T9P"/>
                     </connections>

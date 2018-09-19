@@ -18,6 +18,7 @@
 		EBC5CD0B2152462000C9EBBA /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC5CD0A2152462000C9EBBA /* Presenter.swift */; };
 		EBC5CD0D2152463500C9EBBA /* Clock.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC5CD0C2152463500C9EBBA /* Clock.swift */; };
 		EBC5CD0F2152468D00C9EBBA /* KataLogInLogOut.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC5CD0E2152468D00C9EBBA /* KataLogInLogOut.swift */; };
+		EBC5CD11215258B500C9EBBA /* PresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC5CD10215258B500C9EBBA /* PresenterTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		EBC5CD0A2152462000C9EBBA /* Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
 		EBC5CD0C2152463500C9EBBA /* Clock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clock.swift; sourceTree = "<group>"; };
 		EBC5CD0E2152468D00C9EBBA /* KataLogInLogOut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KataLogInLogOut.swift; sourceTree = "<group>"; };
+		EBC5CD10215258B500C9EBBA /* PresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenterTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +135,7 @@
 			children = (
 				EB8027E321512FC600449EC7 /* KataLogInLogOutTests.swift */,
 				EB8027E521512FC600449EC7 /* Info.plist */,
+				EBC5CD10215258B500C9EBBA /* PresenterTests.swift */,
 			);
 			path = KataLogInLogOutSwiftTests;
 			sourceTree = "<group>";
@@ -333,6 +336,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EBC5CD11215258B500C9EBBA /* PresenterTests.swift in Sources */,
 				EB8027E421512FC600449EC7 /* KataLogInLogOutTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
