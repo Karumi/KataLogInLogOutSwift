@@ -1,11 +1,3 @@
-//
-//  Presenter.swift
-//  KataLogInLogOutSwift
-//
-//  Created by Pedro Vicente Gomez on 19/09/2018.
-//  Copyright © 2018 GoKarumi. All rights reserved.
-//
-
 import Foundation
 
 class Presenter {
@@ -34,7 +26,7 @@ class Presenter {
     }
 
     func didTapLogOutButton() {
-        if (kata.logOut()) {
+        if kata.logOut() {
             view.hideLogOutForm()
             view.showLogInForm()
         } else {

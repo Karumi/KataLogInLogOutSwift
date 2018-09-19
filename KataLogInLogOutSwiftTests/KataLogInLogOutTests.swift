@@ -38,19 +38,22 @@ class KataLogInLogOutTests: XCTestCase {
     }
 
     func testReturnsInvalidCredentialsIfTheUsernameIsNotCorrect() {
-        let result = kata.logIn(username: KataLogInLogOutTests.anyInvalidUsername, password: KataLogInLogOutTests.anyValidPassword)
+        let result = kata.logIn(username: KataLogInLogOutTests.anyInvalidUsername,
+                                password: KataLogInLogOutTests.anyValidPassword)
 
         expect(result.error).toEventually(equal(LogInError.invalidCredentials))
     }
 
     func testReturnsInvalidCredentialsIfThePasswordIsNotCorrect() {
-        let result = kata.logIn(username: KataLogInLogOutTests.anyValidUsername, password: KataLogInLogOutTests.anyInvalidPassword)
+        let result = kata.logIn(username: KataLogInLogOutTests.anyValidUsername,
+                                password: KataLogInLogOutTests.anyInvalidPassword)
 
         expect(result.error).toEventually(equal(LogInError.invalidCredentials))
     }
 
     func testReturnsTheUsernameIfTheUserAndPasswordAreCorrect() {
-        let result = kata.logIn(username: KataLogInLogOutTests.anyValidUsername, password: KataLogInLogOutTests.anyValidPassword)
+        let result = kata.logIn(username: KataLogInLogOutTests.anyValidUsername,
+                                password: KataLogInLogOutTests.anyValidPassword)
 
         expect(result.value).toEventually(equal(KataLogInLogOutTests.anyValidUsername))
     }
@@ -72,19 +75,16 @@ class KataLogInLogOutTests: XCTestCase {
     }
 
     private func givenNowIs(_ date: Date) {
-        clock._now = date
+        clock.mockedNow = date
     }
 
 }
 
-
 class ClockMock: Clock {
 
-    var _now: Date = Date()
+    var mockedNow: Date = Date()
 
     override var now: Date {
-        get {
-            return _now
-        }
+        return mockedNow
     }
 }
