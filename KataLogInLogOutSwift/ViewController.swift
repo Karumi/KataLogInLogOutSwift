@@ -38,6 +38,8 @@ class ViewController: UIViewController, View {
 
     func hideLogInForm() {
         logInButton.isHidden = true
+        username.text = nil
+        password.text = nil
         username.isHidden = true
         password.isHidden = true
     }
