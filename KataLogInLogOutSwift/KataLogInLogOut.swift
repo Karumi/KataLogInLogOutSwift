@@ -24,7 +24,7 @@ class KataLogInLogOut {
     }
 
     func logOut() -> Bool {
-        let nowInSeconds = Int(clock.now.timeIntervalSince1970 / 1000)
+        let nowInSeconds = Int(clock.now.timeIntervalSince1970)
         return nowInSeconds % 2 == 0
     }
 
@@ -38,6 +38,17 @@ class KataLogInLogOut {
 }
 
 
-enum LogInError: Error {
+enum LogInError: Error, Equatable {
     case invalidUsername, invalidCredentials
+
+    static func ==(lhs: LogInError, rhs: LogInError) -> Bool {
+        switch (lhs, rhs) {
+        case (.invalidUsername,   .invalidUsername),
+             (.invalidCredentials, .invalidCredentials):
+            return true
+        default:
+            return false
+        }
+    }
 }
+
