@@ -15,6 +15,9 @@
 		EB8027D621512FC600449EC7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB8027D521512FC600449EC7 /* Assets.xcassets */; };
 		EB8027D921512FC600449EC7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB8027D721512FC600449EC7 /* LaunchScreen.storyboard */; };
 		EB8027E421512FC600449EC7 /* KataLogInLogOutSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8027E321512FC600449EC7 /* KataLogInLogOutSwiftTests.swift */; };
+		EBC5CD0B2152462000C9EBBA /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC5CD0A2152462000C9EBBA /* Presenter.swift */; };
+		EBC5CD0D2152463500C9EBBA /* Clock.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC5CD0C2152463500C9EBBA /* Clock.swift */; };
+		EBC5CD0F2152468D00C9EBBA /* KataLogInLogOut.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC5CD0E2152468D00C9EBBA /* KataLogInLogOut.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +47,9 @@
 		EB8027DF21512FC600449EC7 /* KataLogInLogOutSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KataLogInLogOutSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB8027E321512FC600449EC7 /* KataLogInLogOutSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KataLogInLogOutSwiftTests.swift; sourceTree = "<group>"; };
 		EB8027E521512FC600449EC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EBC5CD0A2152462000C9EBBA /* Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
+		EBC5CD0C2152463500C9EBBA /* Clock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clock.swift; sourceTree = "<group>"; };
+		EBC5CD0E2152468D00C9EBBA /* KataLogInLogOut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KataLogInLogOut.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +121,9 @@
 				EB8027D521512FC600449EC7 /* Assets.xcassets */,
 				EB8027D721512FC600449EC7 /* LaunchScreen.storyboard */,
 				EB8027DA21512FC600449EC7 /* Info.plist */,
+				EBC5CD0A2152462000C9EBBA /* Presenter.swift */,
+				EBC5CD0C2152463500C9EBBA /* Clock.swift */,
+				EBC5CD0E2152468D00C9EBBA /* KataLogInLogOut.swift */,
 			);
 			path = KataLogInLogOutSwift;
 			sourceTree = "<group>";
@@ -252,15 +261,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-KataLogInLogOutSwiftTests/Pods-KataLogInLogOutSwiftTests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
 			);
@@ -274,8 +279,6 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-KataLogInLogOutSwift/Pods-KataLogInLogOutSwift-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Bow/Bow.framework",
@@ -283,8 +286,6 @@
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bow.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BrightFutures.framework",
@@ -320,7 +321,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EBC5CD0B2152462000C9EBBA /* Presenter.swift in Sources */,
+				EBC5CD0F2152468D00C9EBBA /* KataLogInLogOut.swift in Sources */,
 				EB8027D121512FC500449EC7 /* ViewController.swift in Sources */,
+				EBC5CD0D2152463500C9EBBA /* Clock.swift in Sources */,
 				EB8027CF21512FC500449EC7 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
