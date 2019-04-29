@@ -1,7 +1,6 @@
 import XCTest
 import Nimble
 import BrightFutures
-import Result
 @testable import KataLogInLogOutSwift
 
 class PresenterTests: XCTestCase {
