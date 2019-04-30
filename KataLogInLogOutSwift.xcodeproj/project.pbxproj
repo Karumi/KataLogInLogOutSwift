@@ -194,11 +194,11 @@
 				TargetAttributes = {
 					EB8027CA21512FC500449EC7 = {
 						CreatedOnToolsVersion = 9.4.1;
-						LastSwiftMigration = 1010;
+						LastSwiftMigration = 1020;
 					};
 					EB8027DE21512FC600449EC7 = {
 						CreatedOnToolsVersion = 9.4.1;
-						LastSwiftMigration = 1010;
+						LastSwiftMigration = 1020;
 						TestTargetID = EB8027CA21512FC500449EC7;
 					};
 				};
@@ -267,7 +267,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-KataLogInLogOutSwiftTests/Pods-KataLogInLogOutSwiftTests-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-KataLogInLogOutSwiftTests/Pods-KataLogInLogOutSwiftTests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -276,7 +276,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KataLogInLogOutSwiftTests/Pods-KataLogInLogOutSwiftTests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KataLogInLogOutSwiftTests/Pods-KataLogInLogOutSwiftTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		ACD8AEC45C64E50F810DB2D2 /* [CP] Embed Pods Frameworks */ = {
@@ -285,18 +285,16 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-KataLogInLogOutSwift/Pods-KataLogInLogOutSwift-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-KataLogInLogOutSwift/Pods-KataLogInLogOutSwift-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/BrightFutures/BrightFutures.framework",
-				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BrightFutures.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KataLogInLogOutSwift/Pods-KataLogInLogOutSwift-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KataLogInLogOutSwift/Pods-KataLogInLogOutSwift-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		AD6DA5A79540FAD24A3C9E5A /* [CP] Check Pods Manifest.lock */ = {
@@ -491,7 +489,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Y8BRGL6JJ4;
+				DEVELOPMENT_TEAM = BD48FG9BMV;
 				INFOPLIST_FILE = KataLogInLogOutSwift/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -499,7 +497,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.karumi.KataLogInLogOutSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -510,7 +508,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Y8BRGL6JJ4;
+				DEVELOPMENT_TEAM = BD48FG9BMV;
 				INFOPLIST_FILE = KataLogInLogOutSwift/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -518,7 +516,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.karumi.KataLogInLogOutSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -537,7 +535,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.karumi.KataLogInLogOutSwiftTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KataLogInLogOutSwift.app/KataLogInLogOutSwift";
 			};
@@ -557,7 +555,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.karumi.KataLogInLogOutSwiftTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KataLogInLogOutSwift.app/KataLogInLogOutSwift";
 			};
