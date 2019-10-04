@@ -7,7 +7,7 @@ DEPENDENCIES:
   - Nimble
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/CocoaPods/Specs.git:
     - BrightFutures
     - Nimble
 
@@ -17,4 +17,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 51950b50df2db4614d90a9f3956e735e40683877
 
-COCOAPODS: 1.6.1
+COCOAPODS: 1.8.1
