@@ -1,5 +1,5 @@
 import Foundation
-import BrightFutures
+import Combine
 
 class KataLogInLogOut {
 
@@ -9,7 +9,7 @@ class KataLogInLogOut {
         self.clock = clock
     }
 
-    func logIn(username: String, password: String) ->  Future<String, LogInError> {
+    func logIn(username: String, password: String) -> AnyPublisher<String, LogInError> {
         return Future { complete in
             DispatchQueue.global().async {
                 if self.containsInvalidChars(username) {
@@ -20,7 +20,7 @@ class KataLogInLogOut {
                     complete(.failure(.invalidCredentials))
                 }
             }
-        }
+        }.eraseToAnyPublisher()
     }
 
     func logOut() -> Bool {

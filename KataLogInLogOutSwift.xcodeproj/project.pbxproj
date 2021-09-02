@@ -3,11 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		18628BF4028E190DC3905B2F /* Pods_KataLogInLogOutSwiftTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FDF2005D2541428EAEC3368 /* Pods_KataLogInLogOutSwiftTests.framework */; };
+		A909220C26E11F0A0069AF43 /* AnyPublisher+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A909220B26E11F0A0069AF43 /* AnyPublisher+Utils.swift */; };
 		BD6FAF29FBF6FC296934A1D1 /* Pods_KataLogInLogOutSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6C0CD9352949D55C98948B8 /* Pods_KataLogInLogOutSwift.framework */; };
 		EB8027CF21512FC500449EC7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8027CE21512FC500449EC7 /* AppDelegate.swift */; };
 		EB8027D121512FC500449EC7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8027D021512FC500449EC7 /* ViewController.swift */; };
@@ -36,6 +37,7 @@
 		42383DFB87C01B43AD55BEAA /* Pods-KataLogInLogOutSwiftTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KataLogInLogOutSwiftTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-KataLogInLogOutSwiftTests/Pods-KataLogInLogOutSwiftTests.release.xcconfig"; sourceTree = "<group>"; };
 		4FDF2005D2541428EAEC3368 /* Pods_KataLogInLogOutSwiftTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KataLogInLogOutSwiftTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7268DA611FABDB52CFCD4678 /* Pods-KataLogInLogOutSwiftTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KataLogInLogOutSwiftTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KataLogInLogOutSwiftTests/Pods-KataLogInLogOutSwiftTests.debug.xcconfig"; sourceTree = "<group>"; };
+		A909220B26E11F0A0069AF43 /* AnyPublisher+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AnyPublisher+Utils.swift"; sourceTree = "<group>"; };
 		E1882A5A96772624C56231F8 /* Pods-KataLogInLogOutSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KataLogInLogOutSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-KataLogInLogOutSwift/Pods-KataLogInLogOutSwift.release.xcconfig"; sourceTree = "<group>"; };
 		E6C0CD9352949D55C98948B8 /* Pods_KataLogInLogOutSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KataLogInLogOutSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB8027CB21512FC500449EC7 /* KataLogInLogOutSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KataLogInLogOutSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -94,6 +96,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		A909220A26E11EFC0069AF43 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				A909220B26E11F0A0069AF43 /* AnyPublisher+Utils.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		EB8027C221512FC500449EC7 = {
 			isa = PBXGroup;
 			children = (
@@ -133,6 +143,7 @@
 		EB8027E221512FC600449EC7 /* KataLogInLogOutSwiftTests */ = {
 			isa = PBXGroup;
 			children = (
+				A909220A26E11EFC0069AF43 /* Utils */,
 				EB8027E321512FC600449EC7 /* KataLogInLogOutTests.swift */,
 				EB8027E521512FC600449EC7 /* Info.plist */,
 				EBC5CD10215258B500C9EBBA /* PresenterTests.swift */,
@@ -151,7 +162,6 @@
 				EB8027C721512FC500449EC7 /* Sources */,
 				EB8027C821512FC500449EC7 /* Frameworks */,
 				EB8027C921512FC500449EC7 /* Resources */,
-				ACD8AEC45C64E50F810DB2D2 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -278,23 +288,6 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KataLogInLogOutSwiftTests/Pods-KataLogInLogOutSwiftTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		ACD8AEC45C64E50F810DB2D2 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-KataLogInLogOutSwift/Pods-KataLogInLogOutSwift-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-KataLogInLogOutSwift/Pods-KataLogInLogOutSwift-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KataLogInLogOutSwift/Pods-KataLogInLogOutSwift-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		AD6DA5A79540FAD24A3C9E5A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -334,6 +327,7 @@
 			files = (
 				EBC5CD11215258B500C9EBBA /* PresenterTests.swift in Sources */,
 				EB8027E421512FC600449EC7 /* KataLogInLogOutTests.swift in Sources */,
+				A909220C26E11F0A0069AF43 /* AnyPublisher+Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,7 +412,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -472,7 +466,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -489,6 +483,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BD48FG9BMV;
 				INFOPLIST_FILE = KataLogInLogOutSwift/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -508,6 +503,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BD48FG9BMV;
 				INFOPLIST_FILE = KataLogInLogOutSwift/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
