@@ -36,7 +36,7 @@ class PresenterTests: XCTestCase {
     }
 
     func testShowsACouldNotPerformLogOutIfTheLogOutProcessFailed() {
-        givenTheLogOutProcessReturns(false)
+        givenTheLogOutProcessReturns(.fail(.invalidTime))
 
         presenter.didTapLogOutButton()
 
@@ -53,7 +53,7 @@ class PresenterTests: XCTestCase {
     }
 
     func testHidesTheLogOutFormAndShowsTheLogInFormIfTheLogOutProcessFinishProperly() {
-        givenTheLogOutProcessReturns(true)
+        givenTheLogOutProcessReturns(.just(()))
 
         presenter.didTapLogOutButton()
 
@@ -65,7 +65,7 @@ class PresenterTests: XCTestCase {
         kata.mockedLogInResult = result
     }
 
-    private func givenTheLogOutProcessReturns(_ result: Bool) {
+    private func givenTheLogOutProcessReturns(_ result: AnyPublisher<Void, LogOutError>) {
         kata.mockedLogOutResult = result
     }
 }
@@ -73,7 +73,7 @@ class PresenterTests: XCTestCase {
 class MockKataLogInLogOut: KataLogInLogOut {
 
     var mockedLogInResult: AnyPublisher<String, LogInError>!
-    var mockedLogOutResult: Bool!
+    var mockedLogOutResult: AnyPublisher<Void, LogOutError>!
 
     init() {
         super.init(clock: Clock())
@@ -83,7 +83,7 @@ class MockKataLogInLogOut: KataLogInLogOut {
         return mockedLogInResult
     }
 
-    override func logOut() -> Bool {
+    override func logOut() -> AnyPublisher<Void, LogOutError> {
         return mockedLogOutResult
     }
 }

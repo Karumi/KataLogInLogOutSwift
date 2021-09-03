@@ -57,20 +57,20 @@ class KataLogInLogOutTests: XCTestCase {
         expect(result.first!).to(equal(KataLogInLogOutTests.anyValidUsername))
     }
 
-    func testReturnsAnErrorIfTheSecondWhenTheLogOutIsPerformedIsOdd() {
+    func testReturnsAnErrorIfTheSecondWhenTheLogOutIsPerformedIsOdd() throws {
         givenNowIs(Date(timeIntervalSince1970: 3))
 
         let result = kata.logOut()
 
-        expect(result).to(beFalse())
+        expect { try result.get() }.to(throwError(LogOutError.invalidTime))
     }
 
-    func testReturnsSuccessIfTheSecondWhenTheLogOutIsPerformedIsEven() {
+    func testReturnsSuccessIfTheSecondWhenTheLogOutIsPerformedIsEven() throws {
         givenNowIs(Date(timeIntervalSince1970: 2))
 
-        let result = kata.logOut()
+        let result: [Void] = try kata.logOut().get()
 
-        expect(result).to(beTrue())
+        expect(result).to(beEmpty())
     }
 
     private func givenNowIs(_ date: Date) {
