@@ -1,20 +1,16 @@
 PODS:
-  - BrightFutures (8.0.0)
-  - Nimble (8.0.4)
+  - Nimble (9.2.1)
 
 DEPENDENCIES:
-  - BrightFutures
   - Nimble
 
 SPEC REPOS:
   trunk:
-    - BrightFutures
     - Nimble
 
 SPEC CHECKSUMS:
-  BrightFutures: f8427b46feabaf73c5e71ace7d86d65dfbb47696
-  Nimble: 18d5360282923225d62b09d781f63abc1a0111fc
+  Nimble: e7e615c0335ee4bf5b0d786685451e62746117d5
 
-PODFILE CHECKSUM: 51950b50df2db4614d90a9f3956e735e40683877
+PODFILE CHECKSUM: a4e0236e9e8ddde7bbbf716f4cbe54f7bda5d5af
 
-COCOAPODS: 1.8.1
+COCOAPODS: 1.10.2

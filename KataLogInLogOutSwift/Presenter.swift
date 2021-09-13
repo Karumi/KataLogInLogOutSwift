@@ -1,6 +1,8 @@
+import Combine
 import Foundation
 
 class Presenter {
+    private var subscriptions = Set<AnyCancellable>()
 
     private let kata: KataLogInLogOut
     private let view: View
@@ -12,17 +14,20 @@ class Presenter {
 
     func didTapLogInButton(username: String, password: String) {
         kata.logIn(username: username, password: password)
-            .onSuccess { _ in
-                self.view.hideLogInForm()
-                self.view.showLogOutForm()
-            }.onFailure { error in
-                switch error {
-                case .invalidCredentials:
+            .receive(on: RunLoop.main)
+            .sink(receiveCompletion: { [weak self] completion in
+                guard let self = self else { return }
+                switch completion {
+                case .finished:
+                    self.view.hideLogInForm()
+                    self.view.showLogOutForm()
+                case .failure(.invalidCredentials):
                     self.view.showError(message: "Invalid credentials")
-                case .invalidUsername:
+                case .failure(.invalidUsername):
                     self.view.showError(message: "Invalid username")
                 }
-        }
+            }, receiveValue: { _ in })
+            .store(in: &subscriptions)
     }
 
     func didTapLogOutButton() {
@@ -33,7 +38,6 @@ class Presenter {
             view.showError(message: "Log out error")
         }
     }
-
 }
 
 protocol View {

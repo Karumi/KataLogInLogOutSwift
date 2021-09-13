@@ -1,6 +1,6 @@
 import XCTest
 import Nimble
-import BrightFutures
+import Combine
 @testable import KataLogInLogOutSwift
 
 class PresenterTests: XCTestCase {
@@ -20,7 +20,7 @@ class PresenterTests: XCTestCase {
     }
 
     func testShowsAnInvalidCredentialsErrorIfTheLogInReturnsInvalidCredentials() {
-        givenTheLogInProcessReturns(Result(error: LogInError.invalidCredentials))
+        givenTheLogInProcessReturns(.fail(.invalidCredentials))
 
         presenter.didTapLogInButton(username: PresenterTests.anyUsername, password: PresenterTests.anyPassword)
 
@@ -28,7 +28,7 @@ class PresenterTests: XCTestCase {
     }
 
     func testShowsAnInvalidUsernameErrorIfTheLogInReturnsInvalidCredentials() {
-        givenTheLogInProcessReturns(Result(error: LogInError.invalidUsername))
+        givenTheLogInProcessReturns(.fail(.invalidUsername))
 
         presenter.didTapLogInButton(username: PresenterTests.anyUsername, password: PresenterTests.anyPassword)
 
@@ -44,7 +44,7 @@ class PresenterTests: XCTestCase {
     }
 
     func testHidesTheLogInFormAndShowsTheLogOutFormIfTheLogInProcessFinishProperly() {
-        givenTheLogInProcessReturns(Result(value: PresenterTests.anyUsername))
+        givenTheLogInProcessReturns(.just(PresenterTests.anyUsername))
 
         presenter.didTapLogInButton(username: PresenterTests.anyUsername, password: PresenterTests.anyPassword)
 
@@ -61,7 +61,7 @@ class PresenterTests: XCTestCase {
         expect(self.view.didShowLogInForm).toEventually(beTrue())
     }
 
-    private func givenTheLogInProcessReturns(_ result: Result<String, LogInError>) {
+    private func givenTheLogInProcessReturns(_ result: AnyPublisher<String, LogInError>) {
         kata.mockedLogInResult = result
     }
 
@@ -72,15 +72,15 @@ class PresenterTests: XCTestCase {
 
 class MockKataLogInLogOut: KataLogInLogOut {
 
-    var mockedLogInResult: Result<String, LogInError>!
+    var mockedLogInResult: AnyPublisher<String, LogInError>!
     var mockedLogOutResult: Bool!
 
     init() {
         super.init(clock: Clock())
     }
 
-    override func logIn(username: String, password: String) -> Future<String, LogInError> {
-        return Future(result: mockedLogInResult)
+    override func logIn(username: String, password: String) -> AnyPublisher<String, LogInError> {
+        return mockedLogInResult
     }
 
     override func logOut() -> Bool {

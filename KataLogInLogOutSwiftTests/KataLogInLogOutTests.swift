@@ -1,6 +1,6 @@
 import XCTest
 import Nimble
-import BrightFutures
+import Combine
 @testable import KataLogInLogOutSwift
 
 class KataLogInLogOutTests: XCTestCase {
@@ -18,43 +18,43 @@ class KataLogInLogOutTests: XCTestCase {
         self.kata = KataLogInLogOut(clock: clock)
     }
 
-    func testReturnsInvalidUsernameErrorIfTheUsernameContainsTheFirstInvalidChar() {
+    func testReturnsInvalidUsernameErrorIfTheUsernameContainsTheFirstInvalidChar() throws {
         let result = kata.logIn(username: "ad,min", password: KataLogInLogOutTests.anyValidPassword)
 
-        expect(result.error).toEventually(equal(LogInError.invalidUsername))
+        expect { try result.get() }.to(throwError(LogInError.invalidUsername))
     }
 
-    func testReturnsInvalidUsernameErrorIfTheUsernameContainsTheSecondInvalidChar() {
+    func testReturnsInvalidUsernameErrorIfTheUsernameContainsTheSecondInvalidChar() throws {
         let result = kata.logIn(username: "ad.min", password: KataLogInLogOutTests.anyValidPassword)
 
-        expect(result.error).toEventually(equal(LogInError.invalidUsername))
+        expect { try result.get() }.to(throwError(LogInError.invalidUsername))
     }
 
-    func testReturnsInvalidUsernameErrorIfTheUsernameContainsTheThirdInvalidChar() {
+    func testReturnsInvalidUsernameErrorIfTheUsernameContainsTheThirdInvalidChar() throws {
         let result = kata.logIn(username: "ad;min", password: KataLogInLogOutTests.anyValidPassword)
 
-        expect(result.error).toEventually(equal(LogInError.invalidUsername))
+        expect { try result.get() }.to(throwError(LogInError.invalidUsername))
     }
 
-    func testReturnsInvalidCredentialsIfTheUsernameIsNotCorrect() {
+    func testReturnsInvalidCredentialsIfTheUsernameIsNotCorrect() throws {
         let result = kata.logIn(username: KataLogInLogOutTests.anyInvalidUsername,
                                 password: KataLogInLogOutTests.anyValidPassword)
 
-        expect(result.error).toEventually(equal(LogInError.invalidCredentials))
+        expect { try result.get() }.to(throwError(LogInError.invalidCredentials))
     }
 
-    func testReturnsInvalidCredentialsIfThePasswordIsNotCorrect() {
+    func testReturnsInvalidCredentialsIfThePasswordIsNotCorrect() throws {
         let result = kata.logIn(username: KataLogInLogOutTests.anyValidUsername,
                                 password: KataLogInLogOutTests.anyInvalidPassword)
 
-        expect(result.error).toEventually(equal(LogInError.invalidCredentials))
+        expect { try result.get() }.to(throwError(LogInError.invalidCredentials))
     }
 
-    func testReturnsTheUsernameIfTheUserAndPasswordAreCorrect() {
-        let result = kata.logIn(username: KataLogInLogOutTests.anyValidUsername,
-                                password: KataLogInLogOutTests.anyValidPassword)
-
-        expect(result.value).toEventually(equal(KataLogInLogOutTests.anyValidUsername))
+    func testReturnsTheUsernameIfTheUserAndPasswordAreCorrect() throws {
+        let result = try kata.logIn(username: KataLogInLogOutTests.anyValidUsername,
+                                password: KataLogInLogOutTests.anyValidPassword).get()
+        
+        expect(result.first!).to(equal(KataLogInLogOutTests.anyValidUsername))
     }
 
     func testReturnsAnErrorIfTheSecondWhenTheLogOutIsPerformedIsOdd() {
