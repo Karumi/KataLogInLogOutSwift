@@ -22,7 +22,8 @@ extension AnyPublisher {
         var error: Error?
     
         waitUntil(timeout: timeout) { done in
-            self.sink(receiveCompletion: {
+            self.receive(on: RunLoop.main)
+                .sink(receiveCompletion: {
                 if case let .failure(receivedError) = $0 {
                     error = receivedError
                 }

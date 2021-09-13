@@ -1,8 +1,7 @@
-import Foundation
 import Combine
+import Foundation
 
 class KataLogInLogOut {
-
     private let clock: Clock
 
     init(clock: Clock) {
@@ -23,9 +22,11 @@ class KataLogInLogOut {
         }.eraseToAnyPublisher()
     }
 
-    func logOut() -> Bool {
+    func logOut() -> AnyPublisher<Void, LogOutError> {
         let nowInSeconds = Int(clock.now.timeIntervalSince1970)
         return nowInSeconds % 2 == 0
+            ? Empty(completeImmediately: true).setFailureType(to: LogOutError.self).eraseToAnyPublisher()
+            : Fail(outputType: Void.self, failure: LogOutError.invalidTime).eraseToAnyPublisher()
     }
 
     private func containsInvalidChars(_ username: String) -> Bool {
@@ -39,14 +40,8 @@ class KataLogInLogOut {
 
 enum LogInError: Error, Equatable {
     case invalidUsername, invalidCredentials
+}
 
-    static func == (lhs: LogInError, rhs: LogInError) -> Bool {
-        switch (lhs, rhs) {
-        case (.invalidUsername, .invalidUsername),
-             (.invalidCredentials, .invalidCredentials):
-            return true
-        default:
-            return false
-        }
-    }
+enum LogOutError: Error {
+    case invalidTime
 }

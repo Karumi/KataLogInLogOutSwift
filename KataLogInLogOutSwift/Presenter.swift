@@ -31,12 +31,19 @@ class Presenter {
     }
 
     func didTapLogOutButton() {
-        if kata.logOut() {
-            view.hideLogOutForm()
-            view.showLogInForm()
-        } else {
-            view.showError(message: "Log out error")
-        }
+        kata.logOut()
+            .receive(on: RunLoop.main)
+            .sink(receiveCompletion: { [weak self] completion in
+                guard let self = self else { return }
+                switch completion {
+                case .finished:
+                    self.view.hideLogOutForm()
+                    self.view.showLogInForm()
+                case .failure:
+                    self.view.showError(message: "Log out error")
+                }
+            }, receiveValue: { _ in })
+            .store(in: &subscriptions)
     }
 }
 
